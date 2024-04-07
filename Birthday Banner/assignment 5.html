@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lato&family=Montserrat:wght@400;800;900&family=Noto+Sans+Display&family=Open+Sans:wght@300&family=Preahvihear&display=swap" rel="stylesheet">   
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lato&family=Lobster&family=Montserrat:wght@400;800;900&family=Noto+Sans+Display&family=Open+Sans:wght@300&family=Vina+Sans&display=swap" rel="stylesheet">
+
+
+
+
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Borel&family=Dancing+Script:wght@400;700&family=Lato&family=Lobster&family=Montserrat:wght@400;800;900&family=Noto+Sans+Display&family=Open+Sans:wght@300&family=Vina+Sans&display=swap" rel="stylesheet">
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lato&family=Lobster&family=Montserrat:wght@400;800;900&family=Noto+Sans+Display&family=Open+Sans:wght@300&family=Rubik+Wet+Paint&family=Vina+Sans&display=swap" rel="stylesheet">
+
+</head>
+
+<style>
+#result1{font-family: 'Dancing Script', cursive;
+font-family: 'Lato', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Noto Sans Display', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Preahvihear', sans-serif;
+padding-top: 250px;
+padding-left: 30px;
+font-size: 30px;
+color: white;
+}
+
+
+
+
+
+#result2{
+font-family: 'Vina Sans', cursive;
+font-size: 20px;
+color: whitesmoke;
+}
+
+#result3{
+    font-family: 'Borel', cursive;
+    font-size: 20px;
+color: white;
+}
+
+
+
+#result4{
+    font-family: 'Rubik Wet Paint', cursive;
+    font-size: 30px;
+color: yellow;
+}
+
+</style>
+
+
+
+
+
+
+<body>
+    
+
+<div style="width: 704px; height: 504px; background-image: url(https://media.istockphoto.com/id/907182246/photo/happy-birthday-party-background-with-text-and-colorful-tools.webp?b=1&s=170667a&w=0&k=20&c=t6ZUsGs4VxYYea5Rb5b9CJEkFpTRwDNzbFPopLcFp2U=); background-size:contain; background-repeat: no-repeat;" >
+
+<div style="text-align: center;">
+<p id="result1"></p>
+<p id="result2" ></p>
+<p id="result3" ></p>
+<p id="result4" ></p>
+</div>
+</div>
+
+Name : <input type="text" placeholder="Name" oninput="fun4()" id="inp1"><br><br>
+Date : <input type="date" oninput="fun4()" id="inp2"><br><br>
+Message : <input type="text" oninput="fun4()" id="inp3"><br><br>
+From: <input type="text" oninput="fun4()" id="inp4"><br><br>
+
+
+<script>
+
+function fun4(){
+    var a1= document.getElementById("inp1").value;
+
+    var a2=document.getElementById("result1");
+    a2.innerHTML = a1
+    console.log(a2)
+
+
+
+    var a3= document.getElementById("inp2").value;
+
+    var a4=document.getElementById("result2");
+    a4.innerHTML = a3
+    
+
+
+    
+    var a5= document.getElementById("inp3").value;
+
+    var a6=document.getElementById("result3");
+    a6.innerHTML = a5;
+    
+
+
+
+    var a7= document.getElementById("inp4").value;
+
+    var a8=document.getElementById("result4");
+    a8.innerHTML = a7;
+
+
+}
+
+</script>    
+</body>
+</html>

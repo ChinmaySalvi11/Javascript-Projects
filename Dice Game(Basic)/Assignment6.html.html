@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet"> -->
+
+    <style>
+        #div1 {
+            display: block;
+        }
+
+        #divvv1 {
+            display: none;
+        }
+
+        /* body {
+            font-family: 'Roboto', sans-serif;
+
+        } */
+
+        .btn11 {
+            padding: 10px 20px;
+            border: none;
+            background-color: blue;
+            color: white;
+        }
+
+        .btn12 {
+            padding: 20px 40px;
+            border: none;
+            background-color: blue;
+            color: white;
+            font-size: 20px;
+            border-radius: 15px;
+        }
+
+        .img_div {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        input {
+            width: 220px;
+            height: 30px;
+        }
+
+        .bottom_div {
+            text-align: center;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div class="div1" id="divvv2" style="text-align: center;">
+        <h3 style="font-size: 60px; text-align: center;">Welcome to Dice Game</h3>
+        <!-- <h4>Enter players name, both will .. </h4> -->
+        <div class="div2">
+            <input type="text" id="input_1" placeholder="First Player" style="text-align: center;">
+            <br><br>
+            <input type="text" id="input_2" placeholder="Second Player" style="text-align: center;">
+        </div>
+        <br>
+        <button onclick="fun1()" class="btn11">
+            Lets Go
+        </button>
+
+    </div>
+
+
+    <div class="div3" id="divvv1">
+
+        <h3
+            style="font-size: 45px; text-align: center; font-weight: 600; line-height: 5px;">
+            Dice Game</h3>
+        <h3 id="result" style="font-size: 35px; text-align: center; font-weight: 700;"></h3>
+
+        <p id="para1" style="font-size: 30px; text-align: center; line-height: 5px;"><span id="play1score"></span></p>
+        <p id="para2" style="font-size: 30px; text-align: center; line-height: 5px;"><span id="play2score"></span></p>
+
+        <div class="img_div">
+            <div class="div4">
+                <p id="mainplay1" style="font-size: 30px; font-weight: 600; text-align: center;"></p>
+                <img src="dice1.png" alt="" id="img"
+                    style=" width: 400px; margin-bottom: 30px; border: 3px solid black; border-radius: 30px;">
+            </div>
+            <div class="div5">
+                <p id="mainplay2" style="font-size: 30px; font-weight: 600; text-align: center;"></p>
+                <img src="dice1.png" alt="" id="img1"
+                    style=" width: 400px; margin-bottom: 30px; border: 3px solid black; border-radius: 30px;">
+            </div>
+
+        </div>
+
+
+        <div class="bottom_div">
+
+            <button onclick="fun2()" id="startbtn" class="btn12">
+                Roll
+            </button>
+            <button onclick="fun3()" class="btn12" style="margin-left: 20px;">
+                Reset
+            </button>
+        </div>
+
+
+    </div>
+
+
+
+    <script>
+
+        var p1score = 0, p2score = 0
+        var res = document.getElementById("result");
+
+        function fun1() {
+
+            var a = document.getElementById('divvv2')
+            a.style.display = "none"
+
+            var b = document.getElementById('divvv1')
+            b.style.display = "block"
+
+
+            var c = document.getElementById('input_1').value
+            var d = document.getElementById('input_2').value
+
+            document.getElementById("mainplay1").innerHTML = c
+            document.getElementById("mainplay2").innerHTML = d
+
+
+
+            var textnode = c + ":"
+            console.log(textnode)
+
+            var textnode2 = d + ":"
+
+            document.getElementById('play1score').insertAdjacentText("beforebegin", textnode)
+            document.getElementById('play2score').insertAdjacentText("beforebegin", textnode2)
+        }
+
+        function fun2() {
+
+            var p1 = document.getElementById("para1").value;
+            var p2 = document.getElementById("para2").value;
+            var res = document.getElementById("result");
+
+            var c = document.getElementById('input_1').value
+            var d = document.getElementById('input_2').value
+
+            document.getElementById("result").innerHTML = c
+            document.getElementById("result").innerHTML = d
+
+
+
+            var img1 = document.getElementById('img')
+            var x = Math.floor(Math.random() * 6) + 1
+            img1.src = 'dice' + x + '.png'
+
+            var img2 = document.getElementById('img1')
+            var y = Math.floor(Math.random() * 6) + 1
+            img2.src = 'dice' + y + '.png'
+
+            if (x > y) {
+                p1score++
+                document.getElementById("play1score").innerHTML = p1score
+                res.innerHTML = c + " " + "won";
+            }
+            else if (y > x) {
+                p2score++
+                document.getElementById("play2score").innerHTML = p2score
+                res.innerHTML = d + " " + "Won";
+
+            }
+            else if (x == y) {
+                res.innerHTML = "Draw";
+            }
+        }
+
+        function fun3() {
+            p1score = 0;
+            p2score = 0;
+            document.getElementById("play1score").innerHTML = p1score;
+            document.getElementById("play2score").innerHTML = p2score;
+            res.innerHTML = "";
+            document.getElementById("result").innerHTML = "";
+
+            document.getElementById("mainplay1").innerHTML = "";
+            document.getElementById("mainplay2").innerHTML = "";
+            document.getElementById("input_1").value = "";
+            document.getElementById("input_2").value = "";
+
+            var a = document.getElementById('divvv2');
+            a.style.display = "block";
+            var b = document.getElementById('divvv1');
+            b.style.display = "none";
+        }
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js assignment 3</title>
+</head>
+<style>
+    .content {
+
+        text-align: center;
+        color: white;
+    }
+
+    #body1 {
+        background-color: black;
+
+    }
+
+    img {
+        border-radius: 30px;
+        margin-right: 20px;
+    }
+
+    button {
+        margin-top: 30px;
+        padding: 12px 34px;
+        color: white;
+        background-color: blue;
+        border-radius: 30px;
+        border: none;
+        font-size: 20px;
+        margin-right: 10px;
+
+    }
+
+    span {
+        color: rgb(21, 0, 255);
+    }
+
+    #para {
+        font-size: 20px;
+        font-weight: 700;
+    }
+</style>
+
+<body id="body1">
+
+    <div class="content" id="box">
+        <h1 style="font-size: 55px;">Dice Game</h1>
+        <p id="para"></p>
+        <h2>You Have To Make <span id="result1">_</span> In 10 Chances To Win </h2>
+        <h2 style="margin-bottom: 50px;">Remaining chances <span id="result11">_</span></h2>
+        <img src="./dice1.png" alt="" width="350" id="img1">
+        <img src="./dice1.png" alt="" width="350" id="img11">
+
+        <div>
+            <button onclick="win()" id="btn1">Click for Win number</button>
+            <button onclick="roll()" id="btn2">Roll</button>
+            <button onclick="reset()">Reset</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        var num = 0;
+        var num4 = 10;
+        var p = document.getElementById("result11");
+        var bdy = document.getElementById("body1");
+        var won1 = document.getElementById("won")
+
+        function win() {
+            num = Math.floor(Math.random() * 11) + 2;
+
+
+
+            var r = document.getElementById("result1");
+
+            document.getElementById("result1").innerHTML = num;
+
+            document.getElementById("result11").innerHTML = 10
+
+            if (num > 2 || num < 12) {
+                btn1.disabled = true;
+                btn1.style.backgroundColor = "aqua"
+            }
+
+            num4 == 10
+        }
+
+
+
+
+
+        function roll() {
+            var num1 = Number(Math.floor(Math.random() * 6) + 1)
+            var num2 = Number(Math.floor(Math.random() * 6) + 1)
+
+
+            console.log(num1 + num2)
+
+            // var r = document.getElementById("result3");
+
+
+            document.getElementById("img1").innerHTML = num1;
+            var img = document.getElementById("img1");
+            console.log(img)
+
+
+            console.log("dice" + num1 + ".png");
+            img1.src = "dice" + num1 + ".png"
+
+            document.getElementById("img11").innerHTML = num2;
+            var img = document.getElementById("img11");
+            console.log(img)
+
+
+            console.log("dice" + num2 + ".png");
+            img11.src = "dice" + num2 + ".png"
+
+
+
+
+
+
+
+            if (num4 >= 1) {
+                num4--
+                p.innerHTML = num4;
+
+
+            } else {
+                btn2.disabled = true;
+                btn2.style.backgroundColor = "aqua"
+                document.getElementById("para").innerHTML = "YOU LOSSE THE GAME "
+                para.style = "color: red;";
+            }
+
+
+
+            if (num1 + num2 == num) {
+                bdy.style = " background-image: url(win.gif);background-size:cover";
+
+                btn2.disabled = true
+                btn2.style.backgroundColor = "aqua";
+                document.getElementById("para").innerHTML = "YOU WON THE GAME";
+                para.style = "color: green;";
+
+
+
+
+            }
+
+
+
+
+
+
+
+        }
+        function reset() {
+            img1.src = "dice1" + ".png";
+            img11.src = "dice1" + ".png"
+            bdy.style = "background-image:black";
+            result1.innerHTML = "_";
+            document.getElementById("result11").innerHTML = "_";
+            document.getElementById("para").innerHTML = ""
+            num4 = 10
+            btn1.disabled = false;
+            btn1.style.backgroundColor = "blue";
+            btn2.disabled = false;
+            btn2.style.backgroundColor = "blue";
+
+
+
+
+        }
+
+
+        
+        function fun3() {
+            // document.getElementById("startbtn").setAttribute("disabled", "")
+            // if (p1score > p2score) {
+            //     alert("Player1")
+            // }
+            // else {
+            //     alert("Player2")
+            // }
+
+            // document.getElementById("main_div").style.display = "block"
+            // document.getElementById("show_div").style.display = "none"
+
+            img1.src = "dice1" + ".png";
+            img2.src = "dice1" + ".png"
+            res.innerHTML="";
+        }
+
+
+
+    </script>
+</body>
+
+</html>
